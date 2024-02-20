@@ -10,7 +10,9 @@ If any atoms are missing, the centroid will be calculated based on the available
 Run `cargo build --release` to create a binary of the program.
 
 ## Usage
-psatm INFILE OUTFILE
+`psatm INFILE OUTFILE`
+
+`psatm example/gb1.pdb example/gb1_out.pdb`
 
 ### Examples
 Can be found [here](https://github.com/ugSUBMARINE/psatm/tree/master/example).
