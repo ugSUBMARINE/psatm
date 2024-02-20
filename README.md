@@ -8,6 +8,8 @@ Based on a given PDB file, this tool creates a new PDB file that includes pseudo
 
 If any atoms are missing, the centroid will be calculated based on the available atoms. If there are no catalytic atoms for a specific residue, a warning will be issued.
 
+![alt text](./example/output.png?raw=true)
+
 ## Installation
 [Install rust and cargo](https://www.rust-lang.org/tools/install)
 
