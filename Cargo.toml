@@ -2,7 +2,13 @@
 name = "psatm"
 version = "0.1.0"
 edition = "2021"
-
+authors = ["gwirn"]
+license = "MIT"
+description = "Protein pseudoatom calculator based on the centroid of the catalytic atoms"
+readme = "README.md"
+repository = "https://github.com/ugSUBMARINE/psatm"
+keywords = ["protein-structure", "centroid", "pseudoatom"]
+categories = ["command-line-program"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
