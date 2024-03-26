@@ -91,9 +91,31 @@ fn pdb_parser(file_path: String) -> Vec<String> {
                     z_coords.push(*z);
                 }
             };
-        } else {
-            res_data.push(line);
         }
+    }
+    if x_coords.len() > 0 {
+        let num_atoms = x_coords.len() as f32;
+        // calculate the centroid of the residues catalytic atoms
+        let mut x_mean: f32 = x_coords.iter().sum();
+        let mut y_mean: f32 = y_coords.iter().sum();
+        let mut z_mean: f32 = z_coords.iter().sum();
+        x_mean /= &num_atoms;
+        y_mean /= &num_atoms;
+        z_mean /= &num_atoms;
+        // format the new coordinates to fit the pdb format
+        let coord_string = format!("{:>8.3}{:>8.3}{:>8.3}", &x_mean, &y_mean, &z_mean);
+        // (pseudo)atom serial number
+        let atom_serial = format!("{:>5}", res_data.len() + 1);
+        // replace original data with pseudoatom data
+        let mut new_line = prev_line.to_string();
+        new_line.replace_range(30..54, &coord_string);
+        new_line.replace_range(6..11, &atom_serial);
+        new_line.replace_range(12..16, " X  ");
+        new_line.replace_range(76..78, " X  ");
+        res_data.push(new_line);
+        x_coords.clear();
+        y_coords.clear();
+        z_coords.clear();
     }
     res_data
 }
