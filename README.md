@@ -2,7 +2,6 @@
 
 ![TEST](https://github.com/ugSUBMARINE/psatm/actions/workflows/rust.yml/badge.svg)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE.md)
-<a title="Code Size" target="_blank" href="https://github.com/ugSUBMARINE/psatm"><img src="https://img.shields.io/github/languages/code-size/ugSUBMARINE/psatm"></a>
 
 Based on a given PDB file, this tool creates a new PDB file that includes pseudoatoms for each residue. These pseudoatoms represent the centroids of each residue's catalytic atoms.
 
